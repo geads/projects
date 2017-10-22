@@ -1,0 +1,7 @@
+so ~/.vim/myfiletypes.vim
+set expandtab
+set tabstop=2
+set nu
+set sw=2
+autocmd FileType make setlocal noexpandtab
+retab
