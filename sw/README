@@ -1,0 +1,29 @@
+Prereqs
+-------
+
+dateconv: https://github.com/hroptatyr/dateutils
+
+Install
+-------
+
+1. Add a gmail username and password to /etc/swd/password
+2. sudo touch /var/sw.db
+3. sudo cp swd.service /etc/systemd/system/swd.service
+4. sudo cp pySendMail.py pyRecvMail.py swCheckIn.py swService.sh /etc/swd/.
+5. Run 'sudo systemctl preset swd.service' to set the service to run at boot.
+6. Run 'sudo systemctl start  swd.service' to start the service to run at boot.
+7. Run 'sudo systemctl status swd.service' to check the status of the service.
+
+
+Usage
+-----
+Example /var/sw.db entry:
+John|Doe|ZSCJPE|2014-01-22|11:15:00|JFK|name@gmail.com|1
+
+Where:
+- ZSCJPE is the confirmation code
+- The date is the flight date
+- The time is the departure time (24-hour format)
+- JFK is the departure airport code (IATA format)
+- 'name@gmail.com' is the notification email address
+- '1' is the number of passengers, for multi-passenger check-ins)

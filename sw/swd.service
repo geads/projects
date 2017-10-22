@@ -1,0 +1,12 @@
+[Unit]
+Description=Southwest Check-in Script
+
+[Service]
+# Ubuntu/Debian convention:
+EnvironmentFile=
+Type=simple
+ExecStart=/etc/swd/swService.sh /var/sw.db
+Environment=TZMAP_DIR=/usr/share/dateutils/
+
+[Install]
+WantedBy=multi-user.target
